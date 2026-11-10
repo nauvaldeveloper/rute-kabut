@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rute Kabut — Open Trip Alam Sekitar Bandung</title>
+  <meta name="description" content="Open trip Kawah Putih, Tebing Keraton, Papandayan, rafting Pangalengan, dan lainnya dari Bandung. Lihat jadwal keberangkatan dan sisa kursi, lalu daftar lewat WhatsApp." />
+  <meta name="theme-color" content="#23343b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2323343b'/%3E%3Cpath d='M8 48 24 24l9 12 7-9 16 21Z' fill='%23eef1ef'/%3E%3Ccircle cx='44' cy='18' r='6' fill='%23e2703a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="demo-bar" id="demoBar" hidden>Website concept by Nauval Dev · operator &amp; jadwal fiktif · <a id="demoLink" target="_blank" rel="noopener">Hubungi</a></div>
+
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a href="#top" class="brand" aria-label="Rute Kabut, ke atas">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 32 15 14l6 8 5-6 11 16Z"/><circle cx="29" cy="10" r="4"/></svg>
+        <span>Rute Kabut</span>
+      </a>
+      <nav class="nav__links" aria-label="Navigasi">
+        <a href="#jadwal">Jadwal</a>
+        <a href="#paket">Paket</a>
+        <a href="#cara">Cara ikut</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#privat" class="btn btn--sun btn--sm">Trip privat</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero__img" src="assets/img/hero-ridge.webp" srcset="assets/img/hero-ridge-1024.webp 1024w, assets/img/hero-ridge.webp 2048w" sizes="100vw" alt="Rombongan pendaki berjalan di punggungan dengan gunung besar di belakangnya" width="2048" height="1365" fetchpriority="high" />
+      <div class="hero__shade"></div>
+      <div class="wrap hero__in">
+        <p class="eyebrow">Open trip dari Bandung · tiap akhir pekan</p>
+        <h1>Weekend ini, naik ke atas kabut.</h1>
+        <p class="hero__lead">Kawah, tebing, curug, sampai pendakian pertama. Transport, tiket, makan, dan guide sudah termasuk. Kamu cukup datang ke titik jemput.</p>
+        <div class="hero__cta">
+          <a href="#jadwal" class="btn btn--sun">Lihat jadwal</a>
+          <a href="#paket" class="btn btn--ghost">Semua paket</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="next">
+      <div class="wrap">
+        <h2 class="next__title">Berangkat paling dekat</h2>
+        <div class="next__list" id="nextList"></div>
+      </div>
+    </section>
+
+    <section class="schedule" id="jadwal">
+      <div class="wrap">
+        <div class="head">
+          <div><p class="eyebrow eyebrow--dark">Jadwal keberangkatan</p><h2>Pilih tanggal, lihat sisa kursi</h2></div>
+          <div class="filters">
+            <div class="seg" id="monthSeg" role="tablist" aria-label="Bulan"></div>
+            <label class="select"><span class="sr">Jenis trip</span>
+              <select id="typeSel"><option value="">Semua jenis</option><option>Sehari</option><option>Menginap</option></select>
+            </label>
+          </div>
+        </div>
+        <ol class="rows" id="rows" aria-live="polite"></ol>
+        <button class="btn btn--line more" type="button" id="moreRows" hidden></button>
+      </div>
+    </section>
+
+    <section class="packages" id="paket">
+      <div class="wrap">
+        <div class="head"><div><p class="eyebrow eyebrow--dark">Paket</p><h2>Enam rute, tiga tingkat kesulitan</h2></div>
+          <p class="head__note">Garis di tiap kartu adalah profil ketinggian rute dari Bandung (± 700 mdpl) sampai titik tertinggi.</p></div>
+        <div class="cards" id="cards"></div>
+      </div>
+    </section>
+
+    <section class="how" id="cara">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--dark">Cara ikut</p>
+        <h2>Dari daftar sampai berangkat</h2>
+        <ol class="steps">
+          <li><b>Pilih jadwal</b><p>Pilih paket dan tanggal yang masih ada kursinya, isi jumlah peserta dan titik jemput.</p></li>
+          <li><b>Konfirmasi via WhatsApp</b><p>Pesan pendaftaran terisi otomatis. Admin membalas dengan nomor rekening atau QRIS.</p></li>
+          <li><b>DP 50%</b><p>Kursi aman setelah DP masuk. Pelunasan paling lambat H-3 sebelum berangkat.</p></li>
+          <li><b>Masuk grup trip</b><p>H-2 kamu masuk grup WhatsApp peserta: info titik jemput, cuaca, dan barang bawaan.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="private" id="privat">
+      <img src="assets/img/dusk-ridge.webp" alt="" class="private__img" loading="lazy" width="1024" height="679" />
+      <div class="wrap private__in">
+        <div class="private__copy">
+          <p class="eyebrow">Trip privat</p>
+          <h2>Untuk kantor, sekolah, atau keluarga</h2>
+          <p>Tanggal, rute, dan fasilitas menyesuaikan. Mulai 10 orang. Admin akan mengirim penawaran harga lewat WhatsApp.</p>
+        </div>
+        <form class="private__form" id="privForm" novalidate>
+          <label>Nama<input id="pv-name" autocomplete="name" /></label>
+          <label>Rute<select id="pv-route"></select></label>
+          <div class="two">
+            <label>Tanggal<input id="pv-date" type="date" /></label>
+            <label>Jumlah orang<input id="pv-pax" type="number" min="10" max="200" value="15" /></label>
+          </div>
+          <label>Catatan<textarea id="pv-note" placeholder="Mis. outing kantor, butuh bus besar dan makan prasmanan"></textarea></label>
+          <p class="err" id="pvErr" hidden></p>
+          <button class="btn btn--sun" type="submit">Minta penawaran</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap faq__in">
+        <div><p class="eyebrow eyebrow--dark">FAQ</p><h2>Yang sering ditanyakan</h2></div>
+        <div id="faqList" class="faq__list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <b>Rute Kabut</b>
+      <p>Foto: “Human Mountain” oleh Wahyu Fa (CC0) dan siluet punggungan saat senja (CC0, via rawpixel). Lokasi foto bukan rute trip di halaman ini.</p>
+    </div>
+  </footer>
+
+  <div class="layer" id="pkgLayer" hidden>
+    <div class="layer__bg" data-close></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="pkgTitle">
+      <button class="x" type="button" data-close aria-label="Tutup">×</button>
+      <div id="pkgBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

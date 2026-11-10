@@ -1,0 +1,140 @@
+/**
+ * DATA — Rute Kabut (open trip fiktif, untuk portfolio Nauval Dev).
+ * Destinasi nyata di sekitar Bandung; harga, jadwal, dan kuota hanya contoh.
+ */
+window.TRIP = {
+  name: 'Rute Kabut',
+  tagline: 'Open trip alam sekitar Bandung',
+  DEMO: true,
+  WA_NUMBER: '',
+  DEV_CONTACT_URL: 'https://ig.me/m/nauval_dev',
+
+  DP_PERCENT: 50,
+  PAYOFF_DAYS: 3,          // pelunasan paling lambat H-3
+
+  PICKUPS: [
+    { id: 'stasiun', label: 'Stasiun Bandung (pintu selatan)' },
+    { id: 'pasteur', label: 'Pasteur, depan gerbang tol' },
+    { id: 'dago',    label: 'Simpang Dago' },
+    { id: 'buahbatu', label: 'Buahbatu, depan gerbang tol' },
+  ],
+
+  LEVELS: { 1: 'Santai', 2: 'Sedang', 3: 'Menantang' },
+
+  PACKAGES: [
+    {
+      id: 'ciwidey', name: 'Kawah Putih, Situ Patengan & Ranca Upas', short: 'Ciwidey Sehari',
+      type: 'Sehari', level: 1, price: 285000, capacity: 14, days: [6, 0], start: '06.00', duration: '± 13 jam',
+      peak: 2430, distance: 'Jalan kaki ± 3 km',
+      profile: [700, 900, 1300, 1700, 2100, 2430, 2200, 1700, 1600, 1680, 1200, 700],
+      summary: 'Trip paling ramah untuk pemula dan keluarga. Kawah belerang berwarna tosca, danau di tengah kebun teh, lalu memberi makan rusa di Ranca Upas.',
+      itinerary: [
+        ['06.00', 'Kumpul di titik jemput, berangkat ke Ciwidey'],
+        ['08.30', 'Sarapan nasi liwet di warung lokal'],
+        ['09.30', 'Kawah Putih, foto & jalan santai di bibir kawah'],
+        ['12.00', 'Makan siang, lalu ke Situ Patengan naik perahu'],
+        ['14.30', 'Ranca Upas: penangkaran rusa & kebun stroberi'],
+        ['16.30', 'Pulang ke Bandung, tiba sekitar 19.00'],
+      ],
+      include: ['Transport Elf PP', 'Tiket masuk 3 lokasi', 'Sarapan & makan siang', 'Perahu Situ Patengan', 'Guide & dokumentasi'],
+      exclude: ['Jajan & oleh-oleh', 'Masker belerang (bisa beli di lokasi)'],
+      bring: ['Jaket, suhu ± 10–15 °C', 'Masker', 'Sepatu nyaman'],
+    },
+    {
+      id: 'keraton', name: 'Sunrise Tebing Keraton & Tahura', short: 'Sunrise Keraton',
+      type: 'Sehari', level: 1, price: 165000, capacity: 12, days: [6, 0], start: '03.30', duration: '± 8 jam',
+      peak: 1230, distance: 'Jalan kaki ± 6 km',
+      profile: [700, 850, 1050, 1230, 1180, 1000, 950, 800, 750],
+      summary: 'Lautan kabut di atas hutan pinus saat matahari terbit, lalu jalan santai menyusuri Goa Belanda dan Curug Omas di Tahura.',
+      itinerary: [
+        ['03.30', 'Jemput, naik ke Tebing Keraton'],
+        ['05.15', 'Menunggu sunrise di tebing'],
+        ['07.00', 'Sarapan bubur & kopi di warung atas'],
+        ['08.00', 'Trekking Tahura: Goa Belanda, Goa Jepang, Curug Omas'],
+        ['11.30', 'Kembali ke titik jemput'],
+      ],
+      include: ['Transport PP', 'Tiket Tebing Keraton & Tahura', 'Sarapan', 'Guide & dokumentasi'],
+      exclude: ['Senter (disarankan bawa)', 'Makan siang'],
+      bring: ['Jaket & senter', 'Sepatu bergerigi', 'Air minum 1 liter'],
+    },
+    {
+      id: 'papandayan', name: 'Hiking Papandayan 2H1M, Camp Pondok Saladah', short: 'Papandayan 2H1M',
+      type: 'Menginap', level: 2, price: 545000, capacity: 12, days: [6], start: '05.00', duration: '2 hari 1 malam',
+      peak: 2665, distance: 'Trekking ± 9 km',
+      profile: [700, 1100, 1600, 2050, 2200, 2400, 2300, 2665, 2500, 2200, 1600, 700],
+      summary: 'Gunung paling cocok untuk pendakian pertama. Kawah aktif, padang edelweiss Tegal Alun, dan hutan mati yang ikonik. Tenda dan logistik kami siapkan.',
+      itinerary: [
+        ['05.00', 'Hari 1 · Jemput, perjalanan ke Garut'],
+        ['09.00', 'Mulai pendakian lewat Camp David, melewati kawah'],
+        ['13.00', 'Tiba di Pondok Saladah, dirikan tenda, makan siang'],
+        ['15.30', 'Jalan ke Hutan Mati & menunggu sunset'],
+        ['04.30', 'Hari 2 · Summit ke Tegal Alun, padang edelweiss'],
+        ['10.00', 'Sarapan, bongkar tenda, turun'],
+        ['16.00', 'Tiba kembali di Bandung'],
+      ],
+      include: ['Transport PP', 'Simaksi & asuransi', 'Tenda, matras, alat masak', 'Makan 4x', 'Guide & porter tim', 'Dokumentasi'],
+      exclude: ['Sleeping bag (bisa sewa Rp25.000)', 'Porter pribadi'],
+      bring: ['Carrier 30–45 L', 'Jaket tebal, suhu bisa 8 °C', 'Sepatu gunung', 'Headlamp'],
+    },
+    {
+      id: 'cileunca', name: 'Rafting Situ Cileunca & Kebun Teh Malabar', short: 'Rafting Pangalengan',
+      type: 'Sehari', level: 2, price: 395000, capacity: 12, days: [6, 0], start: '06.00', duration: '± 12 jam',
+      peak: 1550, distance: 'Arung jeram ± 5 km',
+      profile: [700, 900, 1200, 1450, 1550, 1500, 1420, 1450, 1200, 700],
+      summary: 'Arung jeram di Sungai Palayangan yang aman untuk pemula, lalu berkeliling kebun teh Malabar dan makam Bosscha.',
+      itinerary: [
+        ['06.00', 'Jemput, berangkat ke Pangalengan'],
+        ['08.30', 'Sarapan, briefing keselamatan rafting'],
+        ['09.30', 'Rafting Sungai Palayangan ± 1,5 jam'],
+        ['12.00', 'Makan siang di tepi Situ Cileunca'],
+        ['13.30', 'Kebun teh Malabar & rumah Bosscha'],
+        ['16.00', 'Pulang ke Bandung'],
+      ],
+      include: ['Transport PP', 'Paket rafting & alat keselamatan', 'Sarapan & makan siang', 'Guide & dokumentasi'],
+      exclude: ['Baju ganti (wajib bawa)', 'Sewa loker'],
+      bring: ['Baju ganti & handuk', 'Sandal gunung', 'Kantong plastik untuk baju basah'],
+    },
+    {
+      id: 'malela', name: 'Curug Malela, "Niagara Mini" Bandung Barat', short: 'Curug Malela',
+      type: 'Sehari', level: 2, price: 325000, capacity: 14, days: [0], start: '05.30', duration: '± 14 jam',
+      peak: 1050, distance: 'Trekking ± 4 km PP',
+      profile: [700, 800, 900, 1050, 980, 820, 760, 820, 980, 900, 700],
+      summary: 'Air terjun selebar 70 meter yang mirip Niagara. Perjalanan panjang tapi terbayar dengan pemandangan yang jarang ramai.',
+      itinerary: [
+        ['05.30', 'Jemput, perjalanan ± 3,5 jam ke Rongga'],
+        ['09.30', 'Trekking turun ke Curug Malela'],
+        ['11.00', 'Main air & makan siang bungkus di curug'],
+        ['13.00', 'Trekking naik kembali'],
+        ['15.00', 'Pulang, tiba di Bandung sekitar 19.30'],
+      ],
+      include: ['Transport PP', 'Tiket masuk', 'Makan siang', 'Guide lokal & dokumentasi'],
+      exclude: ['Ojek turun-naik (opsional Rp40.000)'],
+      bring: ['Sandal gunung', 'Baju ganti', 'Jas hujan'],
+    },
+    {
+      id: 'burangrang', name: 'Pendakian Gunung Burangrang via Legok Haji', short: 'Burangrang Tektok',
+      type: 'Sehari', level: 3, price: 235000, capacity: 10, days: [0], start: '04.00', duration: '± 12 jam',
+      peak: 2050, distance: 'Trekking ± 10 km PP',
+      profile: [700, 1050, 1300, 1500, 1750, 1900, 2050, 1850, 1500, 1100, 700],
+      summary: 'Pendakian tektok (naik-turun sehari) dengan jalur hutan rapat dan puncak berbatu. Untuk yang sudah terbiasa jalan jauh.',
+      itinerary: [
+        ['04.00', 'Jemput, ke basecamp Legok Haji'],
+        ['06.00', 'Mulai mendaki'],
+        ['10.30', 'Puncak Burangrang, istirahat & makan'],
+        ['12.00', 'Turun ke basecamp'],
+        ['15.30', 'Pulang ke Bandung'],
+      ],
+      include: ['Transport PP', 'Simaksi', 'Makan di puncak', 'Guide & sweeper', 'Dokumentasi'],
+      exclude: ['Trekking pole (bisa sewa)'],
+      bring: ['Air minum 2 liter', 'Sepatu gunung', 'Jas hujan', 'Fisik prima'],
+    },
+  ],
+
+  FAQ: [
+    ['Bagaimana sistem pembayarannya?', 'DP 50% untuk mengamankan kursi, pelunasan paling lambat H-3 sebelum keberangkatan lewat transfer atau QRIS.'],
+    ['Kalau saya batal?', 'Batal sampai H-7 DP kembali 100%. H-6 sampai H-3 DP bisa dipindah ke jadwal lain. Kurang dari H-3 DP hangus.'],
+    ['Kalau trip dibatalkan karena cuaca?', 'Kami tawarkan pindah jadwal atau pengembalian dana penuh, tanpa potongan.'],
+    ['Boleh ikut sendirian?', 'Boleh, kebanyakan peserta open trip datang sendiri atau berdua. Kamu akan berangkat bersama peserta lain dalam satu Elf.'],
+    ['Bisa trip privat untuk kantor atau keluarga?', 'Bisa, tanggal dan rute menyesuaikan. Isi form trip privat di bawah, admin akan mengirim penawaran.'],
+  ],
+};
